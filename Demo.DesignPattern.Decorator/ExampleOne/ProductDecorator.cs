@@ -1,4 +1,4 @@
-﻿namespace Demo.DesignPattern.Decorator
+﻿namespace Demo.DesignPattern.Decorator.ExampleOne
 {
     /// <summary>
     /// The 'Product Decorator' abstract class which maintains a reference to a 'Product Component' object
@@ -14,7 +14,7 @@
 
         public override double GetSubTotal()
         {
-            return this.product.GetSubTotal();
+            return product.GetSubTotal();
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace Demo.DesignPattern.Decorator
+﻿namespace Demo.DesignPattern.Decorator.ExampleOne
 {
     /// <summary>
     /// The 'TShirt Concrete Component' class implements 'Product Component' abstract class    
@@ -22,9 +22,9 @@
 
         public override double GetSubTotal()
         {
-            var subTotal = Size switch
+            double subTotal = Size switch
             {
-                ShirtSize.XLarge => (UnitPrice * Quantity) + 2.50,
+                ShirtSize.XLarge => UnitPrice * Quantity + 2.50,
                 _ => UnitPrice * Quantity,
             };
 

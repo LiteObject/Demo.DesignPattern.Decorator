@@ -1,4 +1,4 @@
-﻿namespace Demo.DesignPattern.Decorator
+﻿namespace Demo.DesignPattern.Decorator.ExampleOne
 {
     /// <summary>
     /// The 'Product Component' abstract class

@@ -1,10 +1,17 @@
-﻿namespace Demo.DesignPattern.Decorator
+﻿using Demo.DesignPattern.Decorator.ExampleOne;
+using Demo.DesignPattern.Decorator.ExampleTwo;
+
+namespace Demo.DesignPattern.Decorator
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            // Create 'Concrete Component' TShirt
+            /***************************************************************************************** 
+             * EXAMPLE 1: 
+             *****************************************************************************************/
+
+            // Create 'Concrete Component' T-Shirt
             TShirt tshirt = new(TShirt.ShirtSize.Large)
             {
                 UnitPrice = 5,
@@ -18,18 +25,16 @@
             order.LineItems.Add(lineItem);
 
             Console.WriteLine("Your total is: {0}", order.GetTotal());
-        }
 
-        class Order
-        {
-            public List<LineItem> LineItems { get; set; } = new();
+            /***************************************************************************************** 
+             * EXAMPLE 2: 
+             *****************************************************************************************/
 
-            public double GetTotal()
-            {
-                double total = 0;
-                LineItems.ForEach(l => total += l.GetSubTotalAfterDiscount());
-                return total;
-            }
+            ExampleTwo.Product product = new("Shirt", "A nice shirt", 50.00M);
+            Console.WriteLine($"{product.Name}: {product.Description}, Price: {product.Price:C}");
+
+            BuyOneGetOneFreeDecorator offerProduct = new(product);
+            Console.WriteLine($"{offerProduct.Name}: {offerProduct.Description}, Price: {offerProduct.Price:C}");
         }
     }
 }

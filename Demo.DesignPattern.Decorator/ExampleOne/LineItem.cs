@@ -1,6 +1,6 @@
 ﻿using Humanizer;
 
-namespace Demo.DesignPattern.Decorator
+namespace Demo.DesignPattern.Decorator.ExampleOne
 {
     /// <summary>
     /// The 'Concrete Decorator' class that adds responsibilities to the component
@@ -22,8 +22,8 @@ namespace Demo.DesignPattern.Decorator
 
         public double GetSubTotalAfterDiscount()
         {
-            var subTotal = base.GetSubTotal();
-            return subTotal - (subTotal * DiscountPercentage / 100);
+            double subTotal = base.GetSubTotal();
+            return subTotal - subTotal * DiscountPercentage / 100;
         }
     }
 }
